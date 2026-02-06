@@ -1,0 +1,10 @@
+{
+  "/_global-error/page": "/_global-error",
+  "/_not-found/page": "/_not-found",
+  "/api/translate/route": "/api/translate",
+  "/curriculum/[curriculumSlug]/[subjectSlug]/page": "/curriculum/[curriculumSlug]/[subjectSlug]",
+  "/curriculum/[curriculumSlug]/page": "/curriculum/[curriculumSlug]",
+  "/favicon.ico/route": "/favicon.ico",
+  "/page": "/",
+  "/search/page": "/search"
+}

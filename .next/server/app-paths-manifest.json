@@ -1,0 +1,10 @@
+{
+  "/_global-error/page": "app/_global-error/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
+  "/api/translate/route": "app/api/translate/route.js",
+  "/curriculum/[curriculumSlug]/[subjectSlug]/page": "app/curriculum/[curriculumSlug]/[subjectSlug]/page.js",
+  "/curriculum/[curriculumSlug]/page": "app/curriculum/[curriculumSlug]/page.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/page": "app/page.js",
+  "/search/page": "app/search/page.js"
+}

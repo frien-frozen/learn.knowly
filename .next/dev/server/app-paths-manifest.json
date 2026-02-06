@@ -1,0 +1,7 @@
+{
+  "/api/translate/route": "app/api/translate/route.js",
+  "/curriculum/[curriculumSlug]/[subjectSlug]/page": "app/curriculum/[curriculumSlug]/[subjectSlug]/page.js",
+  "/curriculum/[curriculumSlug]/page": "app/curriculum/[curriculumSlug]/page.js",
+  "/page": "app/page.js",
+  "/search/page": "app/search/page.js"
+}
