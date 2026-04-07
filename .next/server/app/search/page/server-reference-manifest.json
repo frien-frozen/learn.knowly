@@ -1,4 +1,20 @@
 {
-  "node": {},
+  "node": {
+    "00e0b3805d8ac0b46c8b1989f5699bb7c2ec378f2d": {
+      "workers": {
+        "app/search/page": {
+          "moduleId": 63589,
+          "async": true,
+          "exportedName": "fetchSearchIndex",
+          "filename": "learn.knowly/app/actions/search.ts"
+        }
+      },
+      "layer": {
+        "app/search/page": "action-browser"
+      },
+      "exportedName": "fetchSearchIndex",
+      "filename": "learn.knowly/app/actions/search.ts"
+    }
+  },
   "edge": {}
 }

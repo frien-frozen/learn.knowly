@@ -1,5 +1,80 @@
 {
-  "node": {},
+  "node": {
+    "0038f47f950c3bb61d6b820d5406a2739cc68422c2": {
+      "workers": {
+        "app/curriculum/[curriculumSlug]/[subjectSlug]/page": {
+          "moduleId": "[project]/learn.knowly/.next-internal/server/app/curriculum/[curriculumSlug]/[subjectSlug]/page/actions.js { ACTIONS_MODULE0 => \"[project]/learn.knowly/app/actions/search.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/learn.knowly/app/actions/curriculum.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "fetchSearchIndex",
+          "filename": "learn.knowly/app/actions/search.ts"
+        },
+        "app/curriculum/[curriculumSlug]/page": {
+          "moduleId": "[project]/learn.knowly/.next-internal/server/app/curriculum/[curriculumSlug]/page/actions.js { ACTIONS_MODULE0 => \"[project]/learn.knowly/app/actions/search.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/learn.knowly/app/actions/curriculum.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "fetchSearchIndex",
+          "filename": "learn.knowly/app/actions/search.ts"
+        },
+        "app/page": {
+          "moduleId": "[project]/learn.knowly/.next-internal/server/app/page/actions.js { ACTIONS_MODULE0 => \"[project]/learn.knowly/app/actions/search.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/learn.knowly/app/actions/curriculum.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "fetchSearchIndex",
+          "filename": "learn.knowly/app/actions/search.ts"
+        }
+      },
+      "layer": {
+        "app/curriculum/[curriculumSlug]/[subjectSlug]/page": "action-browser",
+        "app/curriculum/[curriculumSlug]/page": "action-browser",
+        "app/page": "action-browser"
+      },
+      "filename": "learn.knowly/app/actions/search.ts",
+      "exportedName": "fetchSearchIndex"
+    },
+    "00de28390d82ddb7ccce7824b14dd967b0ccb52c95": {
+      "workers": {
+        "app/page": {
+          "moduleId": "[project]/learn.knowly/.next-internal/server/app/page/actions.js { ACTIONS_MODULE0 => \"[project]/learn.knowly/app/actions/search.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/learn.knowly/app/actions/curriculum.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "getCurriculums",
+          "filename": "learn.knowly/app/actions/curriculum.ts"
+        }
+      },
+      "layer": {
+        "app/page": "action-browser"
+      },
+      "filename": "learn.knowly/app/actions/curriculum.ts",
+      "exportedName": "getCurriculums"
+    },
+    "40cfc721134d4684533e3e0135b8b07129554e6ef8": {
+      "workers": {
+        "app/curriculum/[curriculumSlug]/page": {
+          "moduleId": "[project]/learn.knowly/.next-internal/server/app/curriculum/[curriculumSlug]/page/actions.js { ACTIONS_MODULE0 => \"[project]/learn.knowly/app/actions/search.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/learn.knowly/app/actions/curriculum.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "getCurriculumBySlug",
+          "filename": "learn.knowly/app/actions/curriculum.ts"
+        }
+      },
+      "layer": {
+        "app/curriculum/[curriculumSlug]/page": "action-browser"
+      },
+      "filename": "learn.knowly/app/actions/curriculum.ts",
+      "exportedName": "getCurriculumBySlug"
+    },
+    "406add6d4d08f14ffa3be3d94f7e41ee02889d9037": {
+      "workers": {
+        "app/curriculum/[curriculumSlug]/[subjectSlug]/page": {
+          "moduleId": "[project]/learn.knowly/.next-internal/server/app/curriculum/[curriculumSlug]/[subjectSlug]/page/actions.js { ACTIONS_MODULE0 => \"[project]/learn.knowly/app/actions/search.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/learn.knowly/app/actions/curriculum.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "getSubjectBySlug",
+          "filename": "learn.knowly/app/actions/curriculum.ts"
+        }
+      },
+      "layer": {
+        "app/curriculum/[curriculumSlug]/[subjectSlug]/page": "action-browser"
+      },
+      "filename": "learn.knowly/app/actions/curriculum.ts",
+      "exportedName": "getSubjectBySlug"
+    }
+  },
   "edge": {},
   "encryptionKey": "LstFAHXnis+aeAPrn8lRpoiylKBQVJYSfEQVxKWXYbY="
 }

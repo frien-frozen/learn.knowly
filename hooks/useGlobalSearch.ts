@@ -1,6 +1,6 @@
-import { useMemo, useCallback } from 'react';
+import { useState, useMemo, useCallback, useEffect } from 'react';
 import Fuse from 'fuse.js';
-import { MOCK_CURRICULUMS, MOCK_SUBJECTS, getSyllabus } from '@/utils/mockData';
+import { fetchSearchIndex } from '@/app/actions/search';
 
 export type SearchResult = {
     id: string;
@@ -12,46 +12,15 @@ export type SearchResult = {
 };
 
 export const useGlobalSearch = () => {
-    const searchIndex = useMemo(() => {
-        const index: SearchResult[] = [];
+    const [searchIndex, setSearchIndex] = useState<SearchResult[]>([]);
 
-        Object.entries(MOCK_CURRICULUMS).forEach(([slug, curr]) => {
-            index.push({
-                id: `curr-${slug}`,
-                type: 'curriculum',
-                title: curr.title,
-                subtitle: curr.subtitle,
-                link: `/curriculum/${slug}`,
-                breadcrumbs: ['Curriculum']
-            });
-
-            const subjects = MOCK_SUBJECTS[slug] || [];
-            subjects.forEach((subj) => {
-                index.push({
-                    id: `subj-${subj.slug}`,
-                    type: 'subject',
-                    title: subj.title,
-                    subtitle: `Code: ${subj.code}`,
-                    link: `/curriculum/${slug}/${subj.slug}`,
-                    breadcrumbs: [curr.title]
-                });
-
-                const syllabus = getSyllabus(subj.slug, subj.title);
-                syllabus.forEach((unit) => {
-                    unit.topics.forEach((topic) => {
-                        index.push({
-                            id: `topic-${topic}`,
-                            type: 'topic',
-                            title: topic,
-                            subtitle: `Unit: ${unit.title}`,
-                            link: `/curriculum/${slug}/${subj.slug}`,
-                            breadcrumbs: [curr.title, subj.title]
-                        });
-                    });
-                });
-            });
+    useEffect(() => {
+        // Fetch search data from database
+        fetchSearchIndex().then(data => {
+            setSearchIndex(data);
+        }).catch(err => {
+            console.error('Failed to load search index:', err);
         });
-        return index;
     }, []);
 
     const fuse = useMemo(() => new Fuse(searchIndex, {
@@ -65,9 +34,9 @@ export const useGlobalSearch = () => {
     }), [searchIndex]);
 
     const search = useCallback((query: string) => {
-        if (!query) return [];
+        if (!query || searchIndex.length === 0) return [];
         return fuse.search(query).map(res => res.item);
-    }, [fuse]);
+    }, [fuse, searchIndex]);
 
-    return { search };
+    return { search, isLoading: searchIndex.length === 0 };
 };

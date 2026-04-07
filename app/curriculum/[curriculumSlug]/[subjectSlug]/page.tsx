@@ -1,18 +1,22 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams } from 'next/navigation';
-import { MOCK_SUBJECTS, getSyllabus } from '@/utils/mockData';
-import { ArrowLeft, PlayCircle, ChevronDown } from 'lucide-react';
+import { ArrowLeft, PlayCircle, ChevronDown, Database, Loader2, X, Hourglass, Lock } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useLangRouter } from '@/hooks/useLangRouter';
 import T from '@/components/ui/T';
+import { getSubjectBySlug } from '@/app/actions/curriculum';
+import LessonPlayer from '@/components/LessonPlayer';
 
 // --- INSTANT UI DICTIONARY ---
 const UI_TEXT = {
-    en: { back: "Back to Subjects", code: "Code", lessons: "lessons", notFound: "Subject not found" },
-    uz: { back: "Fanlarga qaytish", code: "Kod", lessons: "ta dars", notFound: "Fan topilmadi" }
+    en: { back: "Back to Subjects", code: "Code", lessons: "lessons", notFound: "Subject not found in Database", seeding: "Migrating Data...", seedBtn: "Migrate All Mock Data" },
+    uz: { back: "Fanlarga qaytish", code: "Kod", lessons: "ta dars", notFound: "Fan bazada topilmadi", seeding: "Yuklanmoqda...", seedBtn: "Barcha ma'lumotlarni yuklash" }
 };
+
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
 
 export default function SubjectPage() {
     const params = useParams();
@@ -22,16 +26,53 @@ export default function SubjectPage() {
     const curriculumSlug = Array.isArray(params.curriculumSlug) ? params.curriculumSlug[0] : params.curriculumSlug;
     const subjectSlug = Array.isArray(params.subjectSlug) ? params.subjectSlug[0] : params.subjectSlug;
 
-    const subjects = MOCK_SUBJECTS[curriculumSlug] || [];
-    const subject = subjects.find(s => s.slug === subjectSlug);
-    const syllabus = getSyllabus(subjectSlug, subject?.title || '');
+    // --- STATE ---
+    const [subject, setSubject] = useState<any>(null);
+    const [expandedUnit, setExpandedUnit] = useState<string | null>(null);
+    const [isLoadingDB, setIsLoadingDB] = useState(true);
+    const [activeLesson, setActiveLesson] = useState<any>(null);
 
-    // Default: First unit open
-    const [expandedUnit, setExpandedUnit] = useState<string | null>(syllabus[0]?.title || null);
+    // --- FETCH DATA ---
+    useEffect(() => {
+        const load = async () => {
+            if (!subjectSlug) return;
+            try {
+                const dbSubject = await getSubjectBySlug(subjectSlug as string);
+                if (dbSubject) {
+                    setSubject(dbSubject);
+                    if (dbSubject.units && dbSubject.units.length > 0) {
+                        setExpandedUnit(dbSubject.units[0].title);
+                    }
+                }
+            } catch (error) {
+                console.error("Failed to load subject", error);
+            } finally {
+                setIsLoadingDB(false);
+            }
+        };
+        load();
+    }, [subjectSlug]);
 
-    if (!subject) return <div className="p-20 text-center font-bold text-gray-500">{t.notFound}</div>;
+    if (isLoadingDB) {
+        return (
+            <div className="min-h-screen flex flex-col items-center justify-center bg-[#F9FAFB]">
+                <Loader2 className="w-10 h-10 animate-spin text-gray-400 mb-4" />
+                <h1 className="text-xl font-bold text-gray-500"><T>Loading Subject from DB...</T></h1>
+            </div>
+        );
+    }
+
+    if (!subject) {
+         return (
+             <div className="p-20 text-center flex flex-col items-center h-screen bg-[#F9FAFB] pt-40">
+                 <h1 className="font-bold text-2xl text-gray-500 mb-4">{t.notFound}</h1>
+                 <button onClick={() => push(`/curriculum/${curriculumSlug}`)} className="mt-8 text-gray-500 hover:text-red-500 font-bold underline"><T>Go Back</T></button>
+             </div>
+         );
+    }
 
     return (
+        <>
         <motion.main
             key={lang}
             initial={{ opacity: 0 }}
@@ -58,41 +99,47 @@ export default function SubjectPage() {
                         animate={{ y: 0, opacity: 1 }}
                         className="text-4xl font-extrabold text-[#101828] mb-3"
                     >
-                        <T>{subject.title}</T>
+                        <T>{subject.name}</T>
                     </motion.h1>
-                    <div className="flex items-center gap-3">
+                    <div className="flex items-center gap-3 flex-wrap">
                         <span className="bg-gray-200 text-gray-600 px-3 py-1 rounded-md text-xs font-bold uppercase tracking-wider">
-                            {curriculumSlug}
-                        </span>
-                        <span className="text-gray-400 font-bold text-sm">
-                            • {t.code}: {subject.code}
+                            {(subject?.curriculum?.name || 'Curriculum').toUpperCase()}
                         </span>
                     </div>
                 </div>
 
-                {/* SYLLABUS LIST */}
+                {/* SYLLABUS LIST OR VIDEO PLAYER */}
+                {activeLesson ? (
+                    <div className="w-full animate-in fade-in slide-in-from-right-4 duration-300">
+                        <button 
+                            onClick={() => setActiveLesson(null)} 
+                            className="mb-6 flex items-center gap-2 text-sm font-bold text-gray-500 hover:text-[#101828] transition-colors"
+                        >
+                            <ArrowLeft className="w-4 h-4" /> {t.back}
+                        </button>
+                        <LessonPlayer topic={activeLesson} />
+                    </div>
+                ) : (
                 <div className="space-y-4">
-                    {syllabus.map((unit, idx) => {
+                    {subject.units && subject.units.map((unit: any, idx: number) => {
                         const isOpen = expandedUnit === unit.title;
 
                         return (
                             <motion.div
                                 layout
-                                key={idx}
+                                key={unit.id}
                                 initial={{ y: 20, opacity: 0 }}
                                 animate={{ y: 0, opacity: 1 }}
                                 transition={{ delay: idx * 0.05, layout: { duration: 0.3, type: "spring", stiffness: 300, damping: 30 } }}
                                 className="bg-white rounded-2xl border border-gray-200 shadow-sm overflow-hidden"
                             >
-
                                 {/* ACCORDION HEADER */}
                                 <button
                                     onClick={() => setExpandedUnit(isOpen ? null : unit.title)}
                                     className="w-full flex items-center justify-between p-6 hover:bg-gray-50 transition-colors"
                                 >
                                     <div className="flex items-center gap-4">
-
-                                        {/* --- THE ROTATING ANIMATION YOU WANTED --- */}
+                                        {/* SPINNING NUMBER */}
                                         <motion.div
                                             animate={{
                                                 rotate: isOpen ? 360 : 0,
@@ -134,17 +181,18 @@ export default function SubjectPage() {
                                             transition={{ duration: 0.3, ease: "easeInOut" }}
                                         >
                                             <div className="border-t border-gray-100 bg-white px-6 pb-6 pt-2">
-                                                {unit.topics.map((topic, tIdx) => (
+                                                {unit.topics.map((topic: any, tIdx: number) => (
                                                     <motion.div
-                                                        key={tIdx}
+                                                        key={topic.id}
                                                         initial={{ x: -10, opacity: 0 }}
                                                         animate={{ x: 0, opacity: 1 }}
                                                         transition={{ delay: tIdx * 0.05 }}
+                                                        onClick={() => setActiveLesson(topic)}
                                                         className="flex items-center gap-3 py-3 px-2 rounded-lg hover:bg-gray-50 cursor-pointer group transition-colors"
                                                     >
                                                         <PlayCircle className="w-4 h-4 text-gray-300 group-hover:text-[#D92D20] transition-colors" />
                                                         <span className="text-sm font-bold text-gray-600 group-hover:text-[#101828]">
-                                                            <T>{topic}</T>
+                                                            <T>{topic.title}</T>
                                                         </span>
                                                     </motion.div>
                                                 ))}
@@ -157,8 +205,10 @@ export default function SubjectPage() {
                         );
                     })}
                 </div>
+                )}
 
             </div>
         </motion.main>
+        </>
     );
 }

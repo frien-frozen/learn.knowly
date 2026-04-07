@@ -1,77 +1,20 @@
-[00:00:00.709] Server  LOG     ✓ Ready in 521ms
-[00:00:01.780] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:03.011] Server  ERROR   Translation Error: Error: Too Many Requests
-[00:00:03.059] Server  ERROR   Translation Error: Error: Too Many Requests
-[00:00:03.770] Server  ERROR   Translation Error: Error: Too Many Requests
-[00:00:03.835] Server  ERROR   Translation Error: Error: Too Many Requests
-[00:00:04.002] Server  ERROR   Translation Error: Error: Too Many Requests
-[00:00:04.055] Server  ERROR   Translation Error: Error: Too Many Requests
-[00:00:04.288] Server  ERROR   Translation Error: Error: Too Many Requests
-[00:00:04.338] Server  ERROR   Translation Error: Error: Too Many Requests
-[00:00:04.526] Server  ERROR   Translation Error: Error: Too Many Requests
-[00:00:04.587] Server  ERROR   Translation Error: Error: Too Many Requests
-[00:00:04.772] Server  ERROR   Translation Error: Error: Too Many Requests
-[00:00:04.814] Server  ERROR   Translation Error: Error: Too Many Requests
-[00:00:04.991] Server  ERROR   Translation Error: Error: Too Many Requests
-[00:00:05.035] Server  ERROR   Translation Error: Error: Too Many Requests
-[00:00:05.208] Server  ERROR   Translation Error: Error: Too Many Requests
-[00:00:05.252] Server  ERROR   Translation Error: Error: Too Many Requests
-[00:00:05.443] Server  ERROR   Translation Error: Error: Too Many Requests
-[00:00:05.561] Server  ERROR   Translation Error: Error: Too Many Requests
-[00:00:05.648] Server  ERROR   Translation Error: Error: Too Many Requests
-[00:00:05.741] Server  ERROR   Translation Error: Error: Too Many Requests
-[00:00:05.820] Server  ERROR   Translation Error: Error: Too Many Requests
-[00:00:05.864] Server  ERROR   Translation Error: Error: Too Many Requests
-[00:00:06.103] Server  ERROR   Translation Error: Error: Too Many Requests
-[00:00:06.150] Server  ERROR   Translation Error: Error: Too Many Requests
-[00:00:06.265] Server  ERROR   Translation Error: Error: Too Many Requests
-[00:00:06.363] Server  ERROR   Translation Error: Error: Too Many Requests
-[00:00:06.483] Server  ERROR   Translation Error: Error: Too Many Requests
-[00:00:06.668] Server  ERROR   Translation Error: Error: Too Many Requests
-[00:00:06.796] Server  ERROR   Translation Error: Error: Too Many Requests
-[00:00:06.866] Server  ERROR   Translation Error: Error: Too Many Requests
-[00:00:06.910] Server  ERROR   Translation Error: Error: Too Many Requests
-[00:00:07.091] Server  ERROR   Translation Error: Error: Too Many Requests
-[00:00:07.148] Server  ERROR   Translation Error: Error: Too Many Requests
-[00:00:07.256] Server  ERROR   Translation Error: Error: Too Many Requests
-[00:00:07.503] Server  ERROR   Translation Error: Error: Too Many Requests
-[00:00:07.593] Server  ERROR   Translation Error: Error: Too Many Requests
-[00:00:07.652] Server  ERROR   Translation Error: Error: Too Many Requests
-[00:00:07.789] Server  ERROR   Translation Error: Error: Too Many Requests
-[00:00:07.831] Server  ERROR   Translation Error: Error: Too Many Requests
-[00:00:07.874] Server  ERROR   Translation Error: Error: Too Many Requests
-[00:00:08.274] Server  ERROR   Translation Error: Error: Too Many Requests
-[00:00:08.325] Server  ERROR   Translation Error: Error: Too Many Requests
-[00:00:08.366] Server  ERROR   Translation Error: Error: Too Many Requests
-[00:00:08.504] Server  ERROR   Translation Error: Error: Too Many Requests
-[00:00:08.548] Server  ERROR   Translation Error: Error: Too Many Requests
-[00:00:08.682] Server  ERROR   Translation Error: Error: Too Many Requests
-[00:00:08.902] Server  ERROR   Translation Error: Error: Too Many Requests
-[00:00:08.966] Server  ERROR   Translation Error: Error: Too Many Requests
-[00:00:09.067] Server  ERROR   Translation Error: Error: Too Many Requests
-[00:00:09.289] Server  ERROR   Translation Error: Error: Too Many Requests
-[00:00:09.333] Server  ERROR   Translation Error: Error: Too Many Requests
-[00:00:09.399] Server  ERROR   Translation Error: Error: Too Many Requests
-[00:00:09.562] Server  ERROR   Translation Error: Error: Too Many Requests
-[00:00:09.608] Server  ERROR   Translation Error: Error: Too Many Requests
-[00:00:09.656] Server  ERROR   Translation Error: Error: Too Many Requests
-[00:00:10.069] Server  ERROR   Translation Error: Error: Too Many Requests
-[00:00:10.114] Server  ERROR   Translation Error: Error: Too Many Requests
-[00:00:10.162] Server  ERROR   Translation Error: Error: Too Many Requests
-[00:00:10.341] Server  ERROR   Translation Error: Error: Too Many Requests
-[00:00:10.387] Server  ERROR   Translation Error: Error: Too Many Requests
-[00:00:10.555] Server  ERROR   Translation Error: Error: Too Many Requests
-[00:00:32.995] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
-[00:00:34.092] Server  ERROR   Translation Error: Error: Too Many Requests
-[00:00:34.133] Server  ERROR   Translation Error: Error: Too Many Requests
-[00:00:34.176] Server  ERROR   Translation Error: Error: Too Many Requests
-[00:00:34.214] Server  ERROR   Translation Error: Error: Too Many Requests
-[00:00:34.272] Server  ERROR   Translation Error: Error: Too Many Requests
-[00:00:34.389] Server  ERROR   Translation Error: Error: Too Many Requests
-[00:00:34.952] Server  ERROR   Translation Error: Error: Too Many Requests
-[00:00:45.517] Server  ERROR   Translation Error: Error: Too Many Requests
-[00:00:45.594] Server  ERROR   Translation Error: Error: Too Many Requests
-[00:00:45.694] Server  ERROR   Translation Error: Error: Too Many Requests
-[00:00:46.170] Server  ERROR   Translation Error: Error: Too Many Requests
-[00:00:46.224] Server  ERROR   Translation Error: Error: Too Many Requests
-[00:00:46.341] Server  ERROR   Translation Error: Error: Too Many Requests
+[00:00:01.306] Server  WARN    ⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+[00:00:01.409] Server  LOG     ✓ Ready in 1167ms
+[00:00:15.346] Server  ERROR   (node:57980) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
+
+To prepare for this change:
+- If you want the current behavior, explicitly use 'sslmode=verify-full'
+- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
+
+See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[00:00:19.494] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[00:04:56.462] Browser ERROR   Error fetching courses {}
+[00:04:56.462] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[00:15:59.315] Browser ERROR   Error fetching courses {}
+[00:15:59.316] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[00:28:57.529] Server  LOG     ✓ Compiled in 150ms
+[00:29:07.536] Server  LOG     ✓ Compiled in 275ms
+[00:29:16.834] Server  LOG     ✓ Compiled in 44ms
+[00:29:26.930] Server  LOG     ✓ Compiled in 28ms

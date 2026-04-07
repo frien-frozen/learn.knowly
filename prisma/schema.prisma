@@ -1,0 +1,55 @@
+generator client {
+  provider = "prisma-client-js"
+  engineType = "library"
+}
+
+datasource db { 
+  provider = "postgresql" 
+}
+
+model Teacher {
+  id          String   @id @default(cuid())
+  name        String
+  email       String   @unique
+  subjectId   String?  // The specific subject this teacher manages
+  subject     Subject? @relation(fields: [subjectId], references: [id])
+  units       Unit[]
+  topics      Topic[]
+}
+
+model Curriculum {
+  id       String    @id @default(cuid())
+  name     String    @unique
+  subjects Subject[]
+}
+
+model Subject {
+  id           String     @id @default(cuid())
+  name         String
+  curriculumId String
+  curriculum   Curriculum @relation(fields: [curriculumId], references: [id], onDelete: Cascade)
+  units        Unit[]
+  teachers     Teacher[]
+}
+
+model Unit {
+  id        String  @id @default(cuid())
+  title     String
+  order     Int     @default(0)
+  subjectId String
+  subject   Subject @relation(fields: [subjectId], references: [id], onDelete: Cascade)
+  teacherId String
+  teacher   Teacher @relation(fields: [teacherId], references: [id])
+  topics    Topic[]
+}
+
+model Topic {
+  id      String  @id @default(cuid())
+  title   String
+  ytLink  String?
+  order   Int     @default(0)
+  unitId  String
+  unit    Unit    @relation(fields: [unitId], references: [id], onDelete: Cascade)
+  teacherId String
+  teacher   Teacher @relation(fields: [teacherId], references: [id])
+}
