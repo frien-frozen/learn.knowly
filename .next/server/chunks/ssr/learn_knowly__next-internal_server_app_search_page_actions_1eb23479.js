@@ -1,3 +1,0 @@
-module.exports=[3694,a=>a.a(async(b,c)=>{try{var d=a.i(72222),e=b([d]);[d]=e.then?(await e)():e,a.s([]),c()}catch(a){c(a)}},!1),63589,a=>a.a(async(b,c)=>{try{var d=a.i(3694),e=a.i(72222),f=b([d,e]);[d,e]=f.then?(await f)():f,a.s(["00e0b3805d8ac0b46c8b1989f5699bb7c2ec378f2d",()=>e.fetchSearchIndex]),c()}catch(a){c(a)}},!1)];
-
-//# sourceMappingURL=learn_knowly__next-internal_server_app_search_page_actions_1eb23479.js.map

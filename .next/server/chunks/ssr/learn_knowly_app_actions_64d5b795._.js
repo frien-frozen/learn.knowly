@@ -1,3 +1,0 @@
-module.exports=[45663,a=>{"use strict";var b=a.i(6859);let c=(0,b.createServerReference)("402ead6762ab75d9b79cdc6defe9938d13e40c9b6d",b.callServer,void 0,b.findSourceMapURL,"getCurriculumBySlug");a.s(["getCurriculumBySlug",()=>c])},3529,a=>{"use strict";var b=a.i(6859);let c=(0,b.createServerReference)("40f012486b7a2d26fa9e36ece57cdf5630bd8e25a7",b.callServer,void 0,b.findSourceMapURL,"getSubjectBySlug");a.s(["getSubjectBySlug",()=>c])},52797,a=>{"use strict";a.s([],76364),a.i(76364);var b=a.i(11638),c=a.i(45663),d=a.i(3529);a.s(["getCurriculumBySlug",()=>c.getCurriculumBySlug,"getCurriculums",()=>b.getCurriculums,"getSubjectBySlug",()=>d.getSubjectBySlug],52797)}];
-
-//# sourceMappingURL=learn_knowly_app_actions_64d5b795._.js.map

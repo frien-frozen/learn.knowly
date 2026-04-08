@@ -1,3 +1,0 @@
-module.exports=[89980,a=>{"use strict";let b=(0,a.i(10499).default)("arrow-left",[["path",{d:"m12 19-7-7 7-7",key:"1l729n"}],["path",{d:"M19 12H5",key:"x3x0zl"}]]);a.s(["ArrowLeft",()=>b],89980)},3529,a=>{"use strict";var b=a.i(6859);let c=(0,b.createServerReference)("40f012486b7a2d26fa9e36ece57cdf5630bd8e25a7",b.callServer,void 0,b.findSourceMapURL,"getSubjectBySlug");a.s(["getSubjectBySlug",()=>c])}];
-
-//# sourceMappingURL=learn_knowly_09b1a2f4._.js.map

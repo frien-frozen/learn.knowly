@@ -167,9 +167,19 @@ async function getCurriculums() {
 }
 async function getCurriculumBySlug(slug) {
     try {
-        return await __TURBOPACK__imported__module__$5b$project$5d2f$learn$2e$knowly$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"].curriculum.findUnique({
+        return await __TURBOPACK__imported__module__$5b$project$5d2f$learn$2e$knowly$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"].curriculum.findFirst({
             where: {
-                id: slug
+                OR: [
+                    {
+                        id: slug
+                    },
+                    {
+                        name: {
+                            equals: decodeURIComponent(slug),
+                            mode: 'insensitive'
+                        }
+                    }
+                ]
             },
             include: {
                 subjects: {

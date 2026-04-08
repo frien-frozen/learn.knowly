@@ -1,3 +1,0 @@
-module.exports=[11638,a=>{"use strict";var b=a.i(6859);let c=(0,b.createServerReference)("009c444936f955516e45fe81caceb25311235d22ec",b.callServer,void 0,b.findSourceMapURL,"getCurriculums");a.s(["getCurriculums",()=>c])},87359,a=>{a.v(b=>Promise.all(["server/chunks/ssr/learn_knowly_app_actions_64d5b795._.js"].map(b=>a.l(b))).then(()=>b(52797)))}];
-
-//# sourceMappingURL=learn_knowly_app_actions_dc0d2467._.js.map
