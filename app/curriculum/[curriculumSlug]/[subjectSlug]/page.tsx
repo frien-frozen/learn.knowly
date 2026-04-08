@@ -122,12 +122,8 @@ export default function SubjectPage() {
                         const isOpen = expandedUnit === unit.title;
 
                         return (
-                            <motion.div
-                                layout
+                            <div
                                 key={unit.id}
-                                initial={{ y: 20, opacity: 0 }}
-                                animate={{ y: 0, opacity: 1 }}
-                                transition={{ delay: idx * 0.05, layout: { duration: 0.3, type: "spring", stiffness: 300, damping: 30 } }}
                                 className="bg-white rounded-2xl border border-gray-200 shadow-sm overflow-hidden"
                             >
                                 {/* ACCORDION HEADER */}
@@ -184,7 +180,10 @@ export default function SubjectPage() {
                                                         initial={{ x: -10, opacity: 0 }}
                                                         animate={{ x: 0, opacity: 1 }}
                                                         transition={{ delay: tIdx * 0.05 }}
-                                                        onClick={() => setActiveLesson(topic)}
+                                                        onClick={() => {
+                                                            setActiveLesson(topic);
+                                                            window.scrollTo({ top: 0, behavior: 'smooth' });
+                                                        }}
                                                         className="flex items-center gap-3 py-3 px-2 rounded-lg hover:bg-gray-50 cursor-pointer group transition-colors"
                                                     >
                                                         <PlayCircle className="w-4 h-4 text-gray-300 group-hover:text-[#D92D20] transition-colors" />
@@ -198,7 +197,7 @@ export default function SubjectPage() {
                                     )}
                                 </AnimatePresence>
 
-                            </motion.div>
+                            </div>
                         );
                     })}
                 </div>

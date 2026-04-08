@@ -1,6 +1,6 @@
 'use client';
 import React, { useState } from 'react';
-import { Clock, User, PlayCircle, CheckCircle, Circle } from 'lucide-react';
+import { Clock, User, PlayCircle, CheckCircle, Circle, BadgeCheck } from 'lucide-react';
 
 export default function LessonPlayer({ topic }: { topic: any }) {
   const [isCompleted, setIsCompleted] = useState(false);
@@ -49,35 +49,22 @@ export default function LessonPlayer({ topic }: { topic: any }) {
             ></iframe>
           </div>
 
-          {/* Completion Toggle */}
-          <button 
-            onClick={() => setIsCompleted(!isCompleted)}
-            className={`w-full py-3 rounded-xl font-extrabold transition-all duration-300 flex items-center justify-center gap-2 ${
-              isCompleted 
-                ? 'bg-emerald-100 text-emerald-700 border-2 border-emerald-500' 
-                : 'bg-gray-100 text-gray-500 hover:bg-gray-200 border-2 border-transparent'
-            }`}
-          >
-            {isCompleted ? (
-              <><CheckCircle className="w-5 h-5" /> Lesson Completed</>
-            ) : (
-              <><Circle className="w-5 h-5" /> Mark as Complete</>
-            )}
-          </button>
-
           {/* Teacher Profile Card */}
           {topic?.teacher && (
-            <div className="bg-white border border-gray-100 rounded-2xl p-6 flex items-center gap-5 shadow-sm transition-all hover:shadow-md">
-              <div className="w-16 h-16 bg-emerald-50 rounded-full flex items-center justify-center shrink-0 border border-emerald-100 overflow-hidden">
-                {topic.teacher.profilePic ? (
-                  <img src={topic.teacher.profilePic} alt={topic.teacher.name} className="w-full h-full rounded-full object-cover" />
+            <div className="flex items-center gap-5 mt-8 transition-all">
+              <div className="w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center shrink-0 overflow-hidden">
+                {topic.teacher.profileImage ? (
+                  <img src={topic.teacher.profileImage} alt={topic.teacher.name} className="w-full h-full rounded-full object-cover" />
                 ) : (
-                  <User className="w-8 h-8 text-emerald-600" />
+                  <span className="text-xl font-bold text-gray-500">{topic.teacher.name?.charAt(0) || 'T'}</span>
                 )}
               </div>
               <div>
-                <p className="text-xs font-extrabold text-emerald-600 uppercase tracking-widest mb-1">Taught By</p>
-                <h4 className="text-xl font-black text-[#101828]">{topic.teacher.name}</h4>
+                <p className="text-xs font-extrabold text-gray-400 uppercase tracking-widest mb-1">Teacher:</p>
+                <div className="flex items-center gap-1.5">
+                    <h4 className="text-xl font-black text-[#101828]">{topic.teacher.name}</h4>
+                    <BadgeCheck className="w-5 h-5 text-blue-500 fill-current ml-1" />
+                </div>
                 <p className="text-sm text-gray-500 font-medium mt-0.5 line-clamp-2">
                   {topic.teacher.bio || "Knowly Verified Educator"}
                 </p>

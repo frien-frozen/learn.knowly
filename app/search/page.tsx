@@ -23,13 +23,13 @@ function SearchContent() {
 
     const { search } = useGlobalSearch();
     const [results, setResults] = useState<SearchResult[]>([]);
-    const [isAnalyzing, setIsAnalyzing] = useState(true);
+    const [isSearching, setIsSearching] = useState(false);
 
     useEffect(() => {
         const runAiSearch = async () => {
-            setIsAnalyzing(true);
+            setIsSearching(true);
             if (!query) {
-                setIsAnalyzing(false);
+                setIsSearching(false);
                 return;
             }
 
@@ -57,7 +57,7 @@ function SearchContent() {
             // 2. SEARCH DATABASE (English content)
             const matches = search(termToSearch);
             setResults(matches);
-            setIsAnalyzing(false);
+            setIsSearching(false);
         };
 
         runAiSearch();
@@ -76,10 +76,10 @@ function SearchContent() {
                     {t.resultsFor} <span className="text-[#D92D20]">"{query}"</span>
                 </h1>
 
-                {isAnalyzing ? (
+                {isSearching ? (
                     <div className="flex items-center gap-2 text-[#D92D20] font-bold text-sm animate-pulse">
                         <Loader2 className="w-4 h-4 animate-spin" />
-                        <T>Analyzing content...</T>
+                        <T>Searching...</T>
                     </div>
                 ) : (
                     <p className="text-gray-500 font-medium text-sm">
@@ -88,7 +88,7 @@ function SearchContent() {
                 )}
             </div>
 
-            {!isAnalyzing && (
+            {!isSearching && (
                 <div className="space-y-4">
                     {results.length > 0 ? (
                         results.map((res, idx) => (
@@ -118,14 +118,14 @@ function SearchContent() {
                                 <ArrowRight className="w-5 h-5 text-gray-300 group-hover:text-[#D92D20] -translate-x-2 group-hover:translate-x-0 opacity-0 group-hover:opacity-100 transition-all" />
                             </motion.div>
                         ))
-                    ) : (
+                    ) : (query.length > 0 && results.length === 0 ? (
                         <div className="text-center py-20 bg-white rounded-3xl border border-dashed border-gray-200">
                             <div className="w-16 h-16 bg-gray-50 rounded-full flex items-center justify-center mx-auto mb-4">
                                 <Search className="w-6 h-6 text-gray-400" />
                             </div>
                             <h3 className="text-lg font-bold text-gray-900 mb-1">{t.noResults}</h3>
                         </div>
-                    )}
+                    ) : null)}
                 </div>
             )}
         </div>

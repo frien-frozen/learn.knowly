@@ -13,7 +13,7 @@ export default async function Dashboard() {
   });
 
   return (
-    <main className="min-h-screen bg-[#F2F4F7] font-nunito">
+    <main className="min-h-screen bg-[#F9FAFB] font-nunito">
       <div className="container mx-auto px-6 pt-48 pb-20">
 
         {/* Welcome Text */}

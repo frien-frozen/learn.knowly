@@ -32,7 +32,7 @@ export default function CourseList() {
                         });
                     });
                 });
-                setCourses(flattenedCourses.slice(0, 15)); // Top 15 courses
+                setCourses(flattenedCourses.slice(0, 10)); // Top 10 courses
             } catch (error) {
                 console.error("Error fetching courses", error);
             } finally {
@@ -43,7 +43,7 @@ export default function CourseList() {
     }, []);
 
     return (
-        <section id="courses" className="py-24 px-6 bg-[#F2F4F7]">
+        <section id="courses" className="py-24 px-6 bg-[#F9FAFB]">
             <div className="w-full max-w-4xl mx-auto">
 
                 {/* Header */}
