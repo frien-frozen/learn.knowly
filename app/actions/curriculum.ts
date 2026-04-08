@@ -28,8 +28,13 @@ export async function getCurriculums() {
 
 export async function getCurriculumBySlug(slug: string) {
   try {
-    return await prisma.curriculum.findUnique({
-      where: { id: slug },
+    return await prisma.curriculum.findFirst({
+      where: {
+        OR: [
+          { id: slug },
+          { name: { equals: decodeURIComponent(slug), mode: 'insensitive' } }
+        ]
+      },
       include: {
         subjects: {
           include: {

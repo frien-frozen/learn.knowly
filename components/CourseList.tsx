@@ -61,11 +61,12 @@ export default function CourseList() {
                     {isLoading ? (
                         <div className="w-full h-full flex flex-col items-center justify-center p-12 text-gray-400">
                              <Loader2 className="w-8 h-8 animate-spin mb-4" />
-                             <T>Loading courses from database...</T>
+                             <T>Loading curriculum...</T>
                         </div>
                     ) : courses.length === 0 ? (
-                        <div className="w-full text-center p-12 text-gray-500 font-bold">
-                            No courses available yet. Click "Seed DB" on a subject page to populate.
+                        <div className="text-center py-12">
+                          <h3 className="text-xl font-bold text-[#101828]">New Courses in Production</h3>
+                          <p className="text-gray-500 mt-2">Our educators are currently curating high-quality materials. Check back soon!</p>
                         </div>
                     ) : courses.map((course) => {
                         const Icon = iconMap[course.icon] || BookOpen;
@@ -86,9 +87,6 @@ export default function CourseList() {
                                         <h3 className="text-lg font-bold text-[#101828] group-hover:text-[#D92D20] transition-colors">
                                             <T>{course.title}</T>
                                         </h3>
-                                        <p className="text-sm font-bold text-gray-400">
-                                            ID: {course.id}
-                                        </p>
                                     </div>
                                 </div>
 

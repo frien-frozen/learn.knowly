@@ -7,9 +7,22 @@ import { GraduationCap, Star, BookOpen, Book } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useLangRouter } from '@/hooks/useLangRouter';
 import T from '@/components/ui/T';
+import { useEffect, useState } from 'react';
 
 export default function Dashboard() {
   const { push } = useLangRouter();
+  const [curriculums, setCurriculums] = useState<any[]>([]);
+
+  useEffect(() => {
+    import('@/app/actions/curriculum').then(mod => {
+      mod.getCurriculums().then(setCurriculums);
+    });
+  }, []);
+
+  const getHref = (searchParams: string, fallback: string) => {
+    const found = curriculums.find(c => c.name.toLowerCase().includes(searchParams.toLowerCase()));
+    return found ? `/curriculum/${found.id}` : fallback;
+  };
 
   // Animation Variants
   const container = {
@@ -25,7 +38,7 @@ export default function Dashboard() {
     show: {
       opacity: 1,
       y: 0,
-      transition: { type: "spring", stiffness: 40, damping: 15 }
+      transition: { type: "spring" as const, stiffness: 40, damping: 15 }
     }
   };
 
@@ -60,7 +73,7 @@ export default function Dashboard() {
               variants={item}
               whileHover={{ y: -8, scale: 1.02 }} // <--- THE POP
               whileTap={{ scale: 0.98 }}
-              onClick={() => push('/curriculum/igcse')}
+              onClick={() => push(getHref('igcse', '/curriculum/igcse'))}
               className="col-span-1 md:col-span-6 bg-[#D92D20] rounded-[2.5rem] p-8 md:p-10 text-white shadow-xl shadow-red-200/50 cursor-pointer transition-all relative overflow-hidden group min-h-[320px] flex flex-col justify-between"
             >
               <div className="relative z-10">
@@ -79,7 +92,7 @@ export default function Dashboard() {
               variants={item}
               whileHover={{ y: -8, scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              onClick={() => push('/curriculum/a-levels')}
+              onClick={() => push(getHref('a-level', '/curriculum/a-levels'))}
               className="col-span-1 md:col-span-3 bg-white rounded-[2.5rem] p-8 text-[#101828] shadow-lg shadow-gray-200/50 cursor-pointer transition-all flex flex-col justify-between min-h-[320px] group border-2 border-transparent hover:border-gray-100"
             >
               <div>
@@ -101,7 +114,7 @@ export default function Dashboard() {
               variants={item}
               whileHover={{ y: -8, scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              onClick={() => push('/curriculum/pearson')}
+              onClick={() => push(getHref('pearson', '/curriculum/pearson'))}
               className="col-span-1 md:col-span-3 bg-[#FDB022] rounded-[2.5rem] p-8 text-[#7B2D08] shadow-xl shadow-yellow-200/50 cursor-pointer transition-all flex flex-col justify-between min-h-[320px] relative overflow-hidden group"
             >
               <div className="relative z-10">
@@ -119,7 +132,7 @@ export default function Dashboard() {
               variants={item}
               whileHover={{ y: -8, scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              onClick={() => push('/curriculum/lower-secondary')}
+              onClick={() => push(getHref('secondary', '/curriculum/lower-secondary'))}
               className="col-span-1 md:col-span-12 bg-[#8B5CF6] rounded-[2.5rem] p-8 md:p-10 text-white shadow-xl shadow-purple-200/50 cursor-pointer transition-all relative overflow-hidden group flex items-center justify-between"
             >
               <div className="relative z-10 flex flex-col md:flex-row md:items-center gap-6">

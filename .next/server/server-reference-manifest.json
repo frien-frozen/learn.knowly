@@ -65,10 +65,17 @@
           "async": true,
           "exportedName": "getCurriculumBySlug",
           "filename": "learn.knowly/app/actions/curriculum.ts"
+        },
+        "app/page": {
+          "moduleId": 25075,
+          "async": true,
+          "exportedName": "getCurriculumBySlug",
+          "filename": "learn.knowly/app/actions/curriculum.ts"
         }
       },
       "layer": {
-        "app/curriculum/[curriculumSlug]/page": "action-browser"
+        "app/curriculum/[curriculumSlug]/page": "action-browser",
+        "app/page": "action-browser"
       },
       "filename": "learn.knowly/app/actions/curriculum.ts",
       "exportedName": "getCurriculumBySlug"
@@ -80,10 +87,17 @@
           "async": true,
           "exportedName": "getSubjectBySlug",
           "filename": "learn.knowly/app/actions/curriculum.ts"
+        },
+        "app/page": {
+          "moduleId": 25075,
+          "async": true,
+          "exportedName": "getSubjectBySlug",
+          "filename": "learn.knowly/app/actions/curriculum.ts"
         }
       },
       "layer": {
-        "app/curriculum/[curriculumSlug]/[subjectSlug]/page": "action-browser"
+        "app/curriculum/[curriculumSlug]/[subjectSlug]/page": "action-browser",
+        "app/page": "action-browser"
       },
       "filename": "learn.knowly/app/actions/curriculum.ts",
       "exportedName": "getSubjectBySlug"

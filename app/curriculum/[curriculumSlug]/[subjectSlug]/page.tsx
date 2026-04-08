@@ -11,8 +11,8 @@ import LessonPlayer from '@/components/LessonPlayer';
 
 // --- INSTANT UI DICTIONARY ---
 const UI_TEXT = {
-    en: { back: "Back to Subjects", code: "Code", lessons: "lessons", notFound: "Subject not found in Database", seeding: "Migrating Data...", seedBtn: "Migrate All Mock Data" },
-    uz: { back: "Fanlarga qaytish", code: "Kod", lessons: "ta dars", notFound: "Fan bazada topilmadi", seeding: "Yuklanmoqda...", seedBtn: "Barcha ma'lumotlarni yuklash" }
+    en: { back: "Back to Subjects", code: "Code", lessons: "lessons", notFound: "Content in production", seeding: "Loading...", seedBtn: "Load Data" },
+    uz: { back: "Fanlarga qaytish", code: "Kod", lessons: "ta dars", notFound: "Darslik tayyorgarlikda", seeding: "Yuklanmoqda...", seedBtn: "Yuklash" }
 };
 
 export default function SubjectPage() {
@@ -54,7 +54,7 @@ export default function SubjectPage() {
         return (
             <div className="min-h-screen flex flex-col items-center justify-center bg-[#F9FAFB]">
                 <Loader2 className="w-10 h-10 animate-spin text-gray-400 mb-4" />
-                <h1 className="text-xl font-bold text-gray-500"><T>Loading Subject from DB...</T></h1>
+                <h1 className="text-xl font-bold text-gray-500"><T>Loading Subject content...</T></h1>
             </div>
         );
     }

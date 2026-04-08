@@ -29,6 +29,36 @@
       },
       "exportedName": "getCurriculums",
       "filename": "learn.knowly/app/actions/curriculum.ts"
+    },
+    "402ead6762ab75d9b79cdc6defe9938d13e40c9b6d": {
+      "workers": {
+        "app/page": {
+          "moduleId": 25075,
+          "async": true,
+          "exportedName": "getCurriculumBySlug",
+          "filename": "learn.knowly/app/actions/curriculum.ts"
+        }
+      },
+      "layer": {
+        "app/page": "action-browser"
+      },
+      "exportedName": "getCurriculumBySlug",
+      "filename": "learn.knowly/app/actions/curriculum.ts"
+    },
+    "40f012486b7a2d26fa9e36ece57cdf5630bd8e25a7": {
+      "workers": {
+        "app/page": {
+          "moduleId": 25075,
+          "async": true,
+          "exportedName": "getSubjectBySlug",
+          "filename": "learn.knowly/app/actions/curriculum.ts"
+        }
+      },
+      "layer": {
+        "app/page": "action-browser"
+      },
+      "exportedName": "getSubjectBySlug",
+      "filename": "learn.knowly/app/actions/curriculum.ts"
     }
   },
   "edge": {}

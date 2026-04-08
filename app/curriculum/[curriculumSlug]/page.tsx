@@ -54,10 +54,17 @@ export default function CurriculumPage() {
 
     if (!curriculum) {
         return (
-            <div className="min-h-screen flex flex-col items-center justify-center bg-[#F2F4F7]">
-                <h1 className="text-2xl font-bold mb-4"><T>Curriculum Not Found or Not Seeded</T></h1>
-                <p className="text-gray-500 mb-4">Please make sure you have run the database seed.</p>
-                <button onClick={() => push('/')} className="text-red-600 font-bold hover:underline"><T>Go Home</T></button>
+            <div className="flex flex-col items-center justify-center min-h-[60vh] text-center px-4">
+                <h1 className="text-3xl font-black text-[#101828] mb-4">Curriculum Unavailable</h1>
+                <p className="text-gray-500 font-medium mb-8 max-w-md">
+                    The curriculum you are looking for does not exist or is not currently available.
+                </p>
+                <button 
+                  onClick={() => push('/')}
+                  className="bg-[#101828] text-white px-8 py-3 rounded-xl font-bold hover:bg-gray-800 transition-colors"
+                >
+                    Return to Homepage
+                </button>
             </div>
         );
     }
