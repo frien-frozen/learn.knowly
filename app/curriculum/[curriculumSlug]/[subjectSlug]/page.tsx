@@ -15,9 +15,6 @@ const UI_TEXT = {
     uz: { back: "Fanlarga qaytish", code: "Kod", lessons: "ta dars", notFound: "Fan bazada topilmadi", seeding: "Yuklanmoqda...", seedBtn: "Barcha ma'lumotlarni yuklash" }
 };
 
-export const dynamic = 'force-dynamic';
-export const revalidate = 0;
-
 export default function SubjectPage() {
     const params = useParams();
     const { push, lang } = useLangRouter();

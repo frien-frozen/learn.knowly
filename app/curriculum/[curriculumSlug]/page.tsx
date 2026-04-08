@@ -8,9 +8,6 @@ import { motion } from 'framer-motion';
 import T from '@/components/ui/T';
 import { getCurriculumBySlug } from '@/app/actions/curriculum';
 
-export const dynamic = 'force-dynamic';
-export const revalidate = 0;
-
 export default function CurriculumPage() {
     const params = useParams();
     const { push } = useLangRouter();
