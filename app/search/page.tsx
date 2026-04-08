@@ -6,7 +6,7 @@ import { useLangRouter } from '@/hooks/useLangRouter';
 import { useGlobalSearch, SearchResult } from '@/hooks/useGlobalSearch';
 import T from '@/components/ui/T';
 import { Search, GraduationCap, BookOpen, PlayCircle, ArrowRight, Loader2 } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 
 // Quick UI dictionary just for the "Search Results" headers to prevent flashing
 const UI_TEXT = {
@@ -23,7 +23,7 @@ function SearchContent() {
 
     const { search } = useGlobalSearch();
     const [results, setResults] = useState<SearchResult[]>([]);
-    const [isSearching, setIsSearching] = useState(false);
+    const [isSearching, setIsSearching] = useState(true);
 
     useEffect(() => {
         const runAiSearch = async () => {
@@ -54,6 +54,9 @@ function SearchContent() {
                 }
             }
 
+            // Artificial Delay for "Wow" factor and smooth animation
+            await new Promise(resolve => setTimeout(resolve, 800));
+
             // 2. SEARCH DATABASE (English content)
             const matches = search(termToSearch);
             setResults(matches);
@@ -77,9 +80,13 @@ function SearchContent() {
                 </h1>
 
                 {isSearching ? (
-                    <div className="flex items-center gap-2 text-[#D92D20] font-bold text-sm animate-pulse">
-                        <Loader2 className="w-4 h-4 animate-spin" />
-                        <T>Searching...</T>
+                    <div className="flex items-center gap-2">
+                        <span className="text-sm font-bold text-gray-500 uppercase tracking-widest"><T>Searching</T></span>
+                        <div className="flex gap-1.5 translate-y-0.5">
+                            <motion.span animate={{ y: [0, -4, 0] }} transition={{ repeat: Infinity, duration: 0.6, delay: 0 }} className="w-1.5 h-1.5 bg-[#D92D20] rounded-full" />
+                            <motion.span animate={{ y: [0, -4, 0] }} transition={{ repeat: Infinity, duration: 0.6, delay: 0.2 }} className="w-1.5 h-1.5 bg-[#D92D20] rounded-full" />
+                            <motion.span animate={{ y: [0, -4, 0] }} transition={{ repeat: Infinity, duration: 0.6, delay: 0.4 }} className="w-1.5 h-1.5 bg-[#D92D20] rounded-full" />
+                        </div>
                     </div>
                 ) : (
                     <p className="text-gray-500 font-medium text-sm">
@@ -88,15 +95,53 @@ function SearchContent() {
                 )}
             </div>
 
-            {!isSearching && (
-                <div className="space-y-4">
-                    {results.length > 0 ? (
-                        results.map((res, idx) => (
+            <AnimatePresence mode="wait">
+                {isSearching ? (
+                    <motion.div
+                        key="loading"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        className="space-y-4"
+                    >
+                        {[1, 2, 3, 4].map((i) => (
+                            <div key={i} className="bg-white rounded-2xl p-6 shadow-sm border border-gray-50 flex items-center justify-between animate-pulse">
+                                <div className="flex items-center gap-5 w-full">
+                                    <div className="w-12 h-12 bg-gray-50 rounded-xl shrink-0" />
+                                    <div className="space-y-3 w-full max-w-md">
+                                        <div className="h-3 bg-gray-50 rounded w-1/3" />
+                                        <div className="h-5 bg-gray-100 rounded w-3/4" />
+                                    </div>
+                                </div>
+                                <div className="w-5 h-5 bg-gray-50 rounded-full" />
+                            </div>
+                        ))}
+                    </motion.div>
+                ) : query.length > 0 && results.length === 0 ? (
+                    <motion.div
+                        key="no-results"
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        className="text-center py-20 bg-white rounded-3xl border border-dashed border-gray-200"
+                    >
+                        <div className="w-16 h-16 bg-gray-50 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <Search className="w-6 h-6 text-gray-400" />
+                        </div>
+                        <h3 className="text-lg font-bold text-gray-900 mb-1">{t.noResults}</h3>
+                    </motion.div>
+                ) : (
+                    <motion.div
+                        key="results"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        className="space-y-4"
+                    >
+                        {results.map((res, idx) => (
                             <motion.div
                                 key={res.id + idx}
-                                initial={{ opacity: 0, y: 10 }}
+                                initial={{ opacity: 0, y: 15 }}
                                 animate={{ opacity: 1, y: 0 }}
-                                transition={{ delay: idx * 0.05 }}
+                                transition={{ delay: idx * 0.05, ease: "easeOut" }}
                                 onClick={() => push(res.link)}
                                 className="group bg-white rounded-2xl p-6 shadow-sm border border-transparent hover:border-red-100 hover:shadow-md cursor-pointer transition-all flex items-center justify-between"
                             >
@@ -117,17 +162,10 @@ function SearchContent() {
                                 </div>
                                 <ArrowRight className="w-5 h-5 text-gray-300 group-hover:text-[#D92D20] -translate-x-2 group-hover:translate-x-0 opacity-0 group-hover:opacity-100 transition-all" />
                             </motion.div>
-                        ))
-                    ) : (query.length > 0 && results.length === 0 ? (
-                        <div className="text-center py-20 bg-white rounded-3xl border border-dashed border-gray-200">
-                            <div className="w-16 h-16 bg-gray-50 rounded-full flex items-center justify-center mx-auto mb-4">
-                                <Search className="w-6 h-6 text-gray-400" />
-                            </div>
-                            <h3 className="text-lg font-bold text-gray-900 mb-1">{t.noResults}</h3>
-                        </div>
-                    ) : null)}
-                </div>
-            )}
+                        ))}
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </div>
     );
 }

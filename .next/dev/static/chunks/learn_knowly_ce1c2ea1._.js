@@ -26,10 +26,8 @@ __turbopack_context__.s([
 var __TURBOPACK__imported__module__$5b$project$5d2f$learn$2e$knowly$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/learn.knowly/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$learn$2e$knowly$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/learn.knowly/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$learn$2e$knowly$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$clock$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Clock$3e$__ = __turbopack_context__.i("[project]/learn.knowly/node_modules/lucide-react/dist/esm/icons/clock.js [app-client] (ecmascript) <export default as Clock>");
-var __TURBOPACK__imported__module__$5b$project$5d2f$learn$2e$knowly$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$user$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__User$3e$__ = __turbopack_context__.i("[project]/learn.knowly/node_modules/lucide-react/dist/esm/icons/user.js [app-client] (ecmascript) <export default as User>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$learn$2e$knowly$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$circle$2d$play$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__PlayCircle$3e$__ = __turbopack_context__.i("[project]/learn.knowly/node_modules/lucide-react/dist/esm/icons/circle-play.js [app-client] (ecmascript) <export default as PlayCircle>");
-var __TURBOPACK__imported__module__$5b$project$5d2f$learn$2e$knowly$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$circle$2d$check$2d$big$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__CheckCircle$3e$__ = __turbopack_context__.i("[project]/learn.knowly/node_modules/lucide-react/dist/esm/icons/circle-check-big.js [app-client] (ecmascript) <export default as CheckCircle>");
-var __TURBOPACK__imported__module__$5b$project$5d2f$learn$2e$knowly$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$circle$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Circle$3e$__ = __turbopack_context__.i("[project]/learn.knowly/node_modules/lucide-react/dist/esm/icons/circle.js [app-client] (ecmascript) <export default as Circle>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$learn$2e$knowly$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$badge$2d$check$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__BadgeCheck$3e$__ = __turbopack_context__.i("[project]/learn.knowly/node_modules/lucide-react/dist/esm/icons/badge-check.js [app-client] (ecmascript) <export default as BadgeCheck>");
 ;
 var _s = __turbopack_context__.k.signature();
 'use client';
@@ -132,78 +130,57 @@ function LessonPlayer({ topic }) {
                         lineNumber: 41,
                         columnNumber: 11
                     }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$learn$2e$knowly$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                        onClick: ()=>setIsCompleted(!isCompleted),
-                        className: `w-full py-3 rounded-xl font-extrabold transition-all duration-300 flex items-center justify-center gap-2 ${isCompleted ? 'bg-emerald-100 text-emerald-700 border-2 border-emerald-500' : 'bg-gray-100 text-gray-500 hover:bg-gray-200 border-2 border-transparent'}`,
-                        children: isCompleted ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$learn$2e$knowly$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$learn$2e$knowly$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
-                            children: [
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$learn$2e$knowly$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$learn$2e$knowly$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$circle$2d$check$2d$big$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__CheckCircle$3e$__["CheckCircle"], {
-                                    className: "w-5 h-5"
-                                }, void 0, false, {
-                                    fileName: "[project]/learn.knowly/components/LessonPlayer.tsx",
-                                    lineNumber: 62,
-                                    columnNumber: 17
-                                }, this),
-                                " Lesson Completed"
-                            ]
-                        }, void 0, true) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$learn$2e$knowly$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$learn$2e$knowly$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
-                            children: [
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$learn$2e$knowly$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$learn$2e$knowly$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$circle$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Circle$3e$__["Circle"], {
-                                    className: "w-5 h-5"
-                                }, void 0, false, {
-                                    fileName: "[project]/learn.knowly/components/LessonPlayer.tsx",
-                                    lineNumber: 64,
-                                    columnNumber: 17
-                                }, this),
-                                " Mark as Complete"
-                            ]
-                        }, void 0, true)
-                    }, void 0, false, {
-                        fileName: "[project]/learn.knowly/components/LessonPlayer.tsx",
-                        lineNumber: 53,
-                        columnNumber: 11
-                    }, this),
                     topic?.teacher && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$learn$2e$knowly$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "bg-white border border-gray-100 rounded-2xl p-6 flex items-center gap-5 shadow-sm transition-all hover:shadow-md",
+                        className: "flex items-center gap-5 mt-8 transition-all",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$learn$2e$knowly$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "w-16 h-16 bg-emerald-50 rounded-full flex items-center justify-center shrink-0 border border-emerald-100 overflow-hidden",
-                                children: topic.teacher.profilePic ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$learn$2e$knowly$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
-                                    src: topic.teacher.profilePic,
+                                className: "w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center shrink-0 overflow-hidden",
+                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$learn$2e$knowly$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
+                                    src: topic.teacher.profileImage ? `/api/teacher-image?url=${encodeURIComponent(topic.teacher.profileImage)}` : '/default-avatar.png',
                                     alt: topic.teacher.name,
                                     className: "w-full h-full rounded-full object-cover"
                                 }, void 0, false, {
                                     fileName: "[project]/learn.knowly/components/LessonPlayer.tsx",
-                                    lineNumber: 73,
-                                    columnNumber: 19
-                                }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$learn$2e$knowly$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$learn$2e$knowly$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$user$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__User$3e$__["User"], {
-                                    className: "w-8 h-8 text-emerald-600"
-                                }, void 0, false, {
-                                    fileName: "[project]/learn.knowly/components/LessonPlayer.tsx",
-                                    lineNumber: 75,
-                                    columnNumber: 19
+                                    lineNumber: 56,
+                                    columnNumber: 17
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/learn.knowly/components/LessonPlayer.tsx",
-                                lineNumber: 71,
+                                lineNumber: 55,
                                 columnNumber: 15
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$learn$2e$knowly$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$learn$2e$knowly$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                        className: "text-xs font-extrabold text-emerald-600 uppercase tracking-widest mb-1",
-                                        children: "Taught By"
+                                        className: "text-xs font-extrabold text-gray-400 uppercase tracking-widest mb-1",
+                                        children: "Teacher:"
                                     }, void 0, false, {
                                         fileName: "[project]/learn.knowly/components/LessonPlayer.tsx",
-                                        lineNumber: 79,
+                                        lineNumber: 63,
                                         columnNumber: 17
                                     }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$learn$2e$knowly$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
-                                        className: "text-xl font-black text-[#101828]",
-                                        children: topic.teacher.name
-                                    }, void 0, false, {
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$learn$2e$knowly$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "flex items-center gap-1.5",
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$learn$2e$knowly$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
+                                                className: "text-xl font-black text-[#101828]",
+                                                children: topic.teacher.name
+                                            }, void 0, false, {
+                                                fileName: "[project]/learn.knowly/components/LessonPlayer.tsx",
+                                                lineNumber: 65,
+                                                columnNumber: 21
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$learn$2e$knowly$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$learn$2e$knowly$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$badge$2d$check$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__BadgeCheck$3e$__["BadgeCheck"], {
+                                                className: "w-5 h-5 text-white fill-blue-500 ml-1"
+                                            }, void 0, false, {
+                                                fileName: "[project]/learn.knowly/components/LessonPlayer.tsx",
+                                                lineNumber: 66,
+                                                columnNumber: 21
+                                            }, this)
+                                        ]
+                                    }, void 0, true, {
                                         fileName: "[project]/learn.knowly/components/LessonPlayer.tsx",
-                                        lineNumber: 80,
+                                        lineNumber: 64,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$learn$2e$knowly$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -211,19 +188,19 @@ function LessonPlayer({ topic }) {
                                         children: topic.teacher.bio || "Knowly Verified Educator"
                                     }, void 0, false, {
                                         fileName: "[project]/learn.knowly/components/LessonPlayer.tsx",
-                                        lineNumber: 81,
+                                        lineNumber: 68,
                                         columnNumber: 17
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/learn.knowly/components/LessonPlayer.tsx",
-                                lineNumber: 78,
+                                lineNumber: 62,
                                 columnNumber: 15
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/learn.knowly/components/LessonPlayer.tsx",
-                        lineNumber: 70,
+                        lineNumber: 54,
                         columnNumber: 13
                     }, this)
                 ]
@@ -528,25 +505,7 @@ function SubjectPage() {
                         className: "space-y-4",
                         children: subject.units && subject.units.map((unit, idx)=>{
                             const isOpen = expandedUnit === unit.title;
-                            return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$learn$2e$knowly$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$learn$2e$knowly$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
-                                layout: true,
-                                initial: {
-                                    y: 20,
-                                    opacity: 0
-                                },
-                                animate: {
-                                    y: 0,
-                                    opacity: 1
-                                },
-                                transition: {
-                                    delay: idx * 0.05,
-                                    layout: {
-                                        duration: 0.3,
-                                        type: "spring",
-                                        stiffness: 300,
-                                        damping: 30
-                                    }
-                                },
+                            return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$learn$2e$knowly$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "bg-white rounded-2xl border border-gray-200 shadow-sm overflow-hidden",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$learn$2e$knowly$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -571,7 +530,7 @@ function SubjectPage() {
                                                         children: idx + 1
                                                     }, void 0, false, {
                                                         fileName: "[project]/learn.knowly/app/curriculum/[curriculumSlug]/[subjectSlug]/page.tsx",
-                                                        lineNumber: 140,
+                                                        lineNumber: 136,
                                                         columnNumber: 41
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$learn$2e$knowly$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -580,18 +539,18 @@ function SubjectPage() {
                                                             children: unit.title
                                                         }, void 0, false, {
                                                             fileName: "[project]/learn.knowly/app/curriculum/[curriculumSlug]/[subjectSlug]/page.tsx",
-                                                            lineNumber: 154,
+                                                            lineNumber: 150,
                                                             columnNumber: 45
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/learn.knowly/app/curriculum/[curriculumSlug]/[subjectSlug]/page.tsx",
-                                                        lineNumber: 153,
+                                                        lineNumber: 149,
                                                         columnNumber: 41
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/learn.knowly/app/curriculum/[curriculumSlug]/[subjectSlug]/page.tsx",
-                                                lineNumber: 138,
+                                                lineNumber: 134,
                                                 columnNumber: 37
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$learn$2e$knowly$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -606,7 +565,7 @@ function SubjectPage() {
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/learn.knowly/app/curriculum/[curriculumSlug]/[subjectSlug]/page.tsx",
-                                                        lineNumber: 159,
+                                                        lineNumber: 155,
                                                         columnNumber: 41
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$learn$2e$knowly$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$learn$2e$knowly$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -620,24 +579,24 @@ function SubjectPage() {
                                                             className: "w-5 h-5 text-gray-400"
                                                         }, void 0, false, {
                                                             fileName: "[project]/learn.knowly/app/curriculum/[curriculumSlug]/[subjectSlug]/page.tsx",
-                                                            lineNumber: 166,
+                                                            lineNumber: 162,
                                                             columnNumber: 45
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/learn.knowly/app/curriculum/[curriculumSlug]/[subjectSlug]/page.tsx",
-                                                        lineNumber: 162,
+                                                        lineNumber: 158,
                                                         columnNumber: 41
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/learn.knowly/app/curriculum/[curriculumSlug]/[subjectSlug]/page.tsx",
-                                                lineNumber: 158,
+                                                lineNumber: 154,
                                                 columnNumber: 37
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/learn.knowly/app/curriculum/[curriculumSlug]/[subjectSlug]/page.tsx",
-                                        lineNumber: 134,
+                                        lineNumber: 130,
                                         columnNumber: 33
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$learn$2e$knowly$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$learn$2e$knowly$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$components$2f$AnimatePresence$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["AnimatePresence"], {
@@ -672,14 +631,20 @@ function SubjectPage() {
                                                         transition: {
                                                             delay: tIdx * 0.05
                                                         },
-                                                        onClick: ()=>setActiveLesson(topic),
+                                                        onClick: ()=>{
+                                                            setActiveLesson(topic);
+                                                            window.scrollTo({
+                                                                top: 0,
+                                                                behavior: 'smooth'
+                                                            });
+                                                        },
                                                         className: "flex items-center gap-3 py-3 px-2 rounded-lg hover:bg-gray-50 cursor-pointer group transition-colors",
                                                         children: [
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$learn$2e$knowly$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$learn$2e$knowly$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$circle$2d$play$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__PlayCircle$3e$__["PlayCircle"], {
                                                                 className: "w-4 h-4 text-gray-300 group-hover:text-[#D92D20] transition-colors"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/learn.knowly/app/curriculum/[curriculumSlug]/[subjectSlug]/page.tsx",
-                                                                lineNumber: 190,
+                                                                lineNumber: 189,
                                                                 columnNumber: 57
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$learn$2e$knowly$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -688,33 +653,33 @@ function SubjectPage() {
                                                                     children: topic.title
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/learn.knowly/app/curriculum/[curriculumSlug]/[subjectSlug]/page.tsx",
-                                                                    lineNumber: 192,
+                                                                    lineNumber: 191,
                                                                     columnNumber: 61
                                                                 }, this)
                                                             }, void 0, false, {
                                                                 fileName: "[project]/learn.knowly/app/curriculum/[curriculumSlug]/[subjectSlug]/page.tsx",
-                                                                lineNumber: 191,
+                                                                lineNumber: 190,
                                                                 columnNumber: 57
                                                             }, this)
                                                         ]
                                                     }, topic.id, true, {
                                                         fileName: "[project]/learn.knowly/app/curriculum/[curriculumSlug]/[subjectSlug]/page.tsx",
-                                                        lineNumber: 182,
+                                                        lineNumber: 178,
                                                         columnNumber: 53
                                                     }, this))
                                             }, void 0, false, {
                                                 fileName: "[project]/learn.knowly/app/curriculum/[curriculumSlug]/[subjectSlug]/page.tsx",
-                                                lineNumber: 180,
+                                                lineNumber: 176,
                                                 columnNumber: 45
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/learn.knowly/app/curriculum/[curriculumSlug]/[subjectSlug]/page.tsx",
-                                            lineNumber: 174,
+                                            lineNumber: 170,
                                             columnNumber: 41
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/learn.knowly/app/curriculum/[curriculumSlug]/[subjectSlug]/page.tsx",
-                                        lineNumber: 172,
+                                        lineNumber: 168,
                                         columnNumber: 33
                                     }, this)
                                 ]

@@ -43,21 +43,21 @@ export default function CourseList() {
     }, []);
 
     return (
-        <section id="courses" className="py-24 px-6 bg-[#F9FAFB]">
+        <section id="courses" className="py-12 md:py-24 px-2 md:px-6 bg-[#F9FAFB]">
             <div className="w-full max-w-4xl mx-auto">
 
                 {/* Header */}
                 <div className="text-center mb-12">
-                    <h2 className="text-4xl font-extrabold text-[#101828] mb-4 font-nunito">
+                    <h2 className="text-2xl md:text-4xl font-extrabold text-[#101828] mb-3 font-nunito">
                         <T>Most Popular Courses</T>
                     </h2>
-                    <p className="text-xl text-gray-500 font-medium font-nunito">
+                    <p className="text-lg md:text-xl text-gray-500 font-medium font-nunito">
                         <T>Join thousands of students mastering these subjects</T>
                     </p>
                 </div>
 
                 {/* Card Container */}
-                <div className="bg-white rounded-[2.5rem] p-8 shadow-sm min-h-[300px]">
+                <div className="bg-white rounded-[2rem] md:rounded-[2.5rem] p-4 md:p-8 shadow-sm min-h-[300px]">
                     {isLoading ? (
                         <div className="w-full h-full flex flex-col items-center justify-center p-12 text-gray-400">
                              <Loader2 className="w-8 h-8 animate-spin mb-4" />
@@ -75,24 +75,24 @@ export default function CourseList() {
                             <div
                                 key={course.id}
                                 onClick={() => push(course.link)}
-                                className="group flex flex-col sm:flex-row items-center justify-between p-4 mb-3 bg-gray-50 hover:bg-red-50 rounded-2xl border border-transparent hover:border-red-100 transition-all cursor-pointer font-nunito"
+                                className="group flex flex-row items-center justify-between p-3 md:p-4 mb-2 md:mb-3 bg-gray-50 hover:bg-red-50 rounded-2xl border border-transparent hover:border-red-100 transition-all cursor-pointer font-nunito"
                             >
 
                                 {/* Left: Icon + Title */}
-                                <div className="flex items-center gap-4 w-full sm:w-auto">
-                                    <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-sm group-hover:scale-110 transition-transform">
-                                        <Icon className="w-6 h-6 text-gray-500 group-hover:text-[#D92D20]" />
+                                <div className="flex items-center gap-3 md:gap-4 w-full sm:w-auto">
+                                    <div className="w-9 h-9 md:w-12 md:h-12 bg-white rounded-xl flex items-center justify-center shadow-sm group-hover:scale-110 transition-transform flex-shrink-0">
+                                        <Icon className="w-5 h-5 md:w-6 md:h-6 text-gray-500 group-hover:text-[#D92D20]" />
                                     </div>
-                                    <div>
-                                        <h3 className="text-lg font-bold text-[#101828] group-hover:text-[#D92D20] transition-colors">
+                                    <div className="flex-1 min-w-0">
+                                        <h3 className="text-sm md:text-lg font-bold text-[#101828] group-hover:text-[#D92D20] transition-colors truncate">
                                             <T>{course.title}</T>
                                         </h3>
                                     </div>
                                 </div>
 
                                 {/* Right: Badges */}
-                                <div className="flex items-center gap-2 mt-4 sm:mt-0 w-full sm:w-auto justify-end">
-                                    <span className="px-3 py-1 rounded-lg text-xs font-extrabold bg-blue-100 text-blue-600">
+                                <div className="flex items-center gap-2 ml-4 flex-shrink-0">
+                                    <span className="px-2 py-0.5 md:px-3 md:py-1 rounded-lg text-[10px] md:text-xs font-extrabold bg-blue-100 text-blue-600 whitespace-nowrap">
                                         {course.level}
                                     </span>
                                 </div>

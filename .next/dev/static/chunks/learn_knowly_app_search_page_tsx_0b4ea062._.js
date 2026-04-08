@@ -53,14 +53,14 @@ function SearchContent() {
     const t = UI_TEXT[lang] || UI_TEXT.uz;
     const { search } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$learn$2e$knowly$2f$hooks$2f$useGlobalSearch$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useGlobalSearch"])();
     const [results, setResults] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$learn$2e$knowly$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])([]);
-    const [isAnalyzing, setIsAnalyzing] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$learn$2e$knowly$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(true);
+    const [isSearching, setIsSearching] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$learn$2e$knowly$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$learn$2e$knowly$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
         "SearchContent.useEffect": ()=>{
             const runAiSearch = {
                 "SearchContent.useEffect.runAiSearch": async ()=>{
-                    setIsAnalyzing(true);
+                    setIsSearching(true);
                     if (!query) {
-                        setIsAnalyzing(false);
+                        setIsSearching(false);
                         return;
                     }
                     let termToSearch = query;
@@ -89,7 +89,7 @@ function SearchContent() {
                     // 2. SEARCH DATABASE (English content)
                     const matches = search(termToSearch);
                     setResults(matches);
-                    setIsAnalyzing(false);
+                    setIsSearching(false);
                 }
             }["SearchContent.useEffect.runAiSearch"];
             runAiSearch();
@@ -151,7 +151,7 @@ function SearchContent() {
                         lineNumber: 75,
                         columnNumber: 17
                     }, this),
-                    isAnalyzing ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$learn$2e$knowly$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    isSearching ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$learn$2e$knowly$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "flex items-center gap-2 text-[#D92D20] font-bold text-sm animate-pulse",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$learn$2e$knowly$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$learn$2e$knowly$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$loader$2d$circle$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Loader2$3e$__["Loader2"], {
@@ -162,7 +162,7 @@ function SearchContent() {
                                 columnNumber: 25
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$learn$2e$knowly$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$learn$2e$knowly$2f$components$2f$ui$2f$T$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                                children: "Analyzing content..."
+                                children: "Searching..."
                             }, void 0, false, {
                                 fileName: "[project]/learn.knowly/app/search/page.tsx",
                                 lineNumber: 82,
@@ -193,9 +193,68 @@ function SearchContent() {
                 lineNumber: 74,
                 columnNumber: 13
             }, this),
-            !isAnalyzing && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$learn$2e$knowly$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+            isSearching ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$learn$2e$knowly$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "flex flex-col items-center justify-center py-20 text-gray-500 bg-white rounded-3xl border border-dashed border-gray-200",
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$learn$2e$knowly$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$learn$2e$knowly$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$loader$2d$circle$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Loader2$3e$__["Loader2"], {
+                        className: "w-8 h-8 animate-spin mb-3 text-[#D92D20]"
+                    }, void 0, false, {
+                        fileName: "[project]/learn.knowly/app/search/page.tsx",
+                        lineNumber: 93,
+                        columnNumber: 21
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$learn$2e$knowly$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                        className: "font-bold text-lg",
+                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$learn$2e$knowly$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$learn$2e$knowly$2f$components$2f$ui$2f$T$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                            children: "Searching courses..."
+                        }, void 0, false, {
+                            fileName: "[project]/learn.knowly/app/search/page.tsx",
+                            lineNumber: 94,
+                            columnNumber: 54
+                        }, this)
+                    }, void 0, false, {
+                        fileName: "[project]/learn.knowly/app/search/page.tsx",
+                        lineNumber: 94,
+                        columnNumber: 21
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "[project]/learn.knowly/app/search/page.tsx",
+                lineNumber: 92,
+                columnNumber: 17
+            }, this) : query.length > 0 && results.length === 0 ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$learn$2e$knowly$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "text-center py-20 bg-white rounded-3xl border border-dashed border-gray-200",
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$learn$2e$knowly$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "w-16 h-16 bg-gray-50 rounded-full flex items-center justify-center mx-auto mb-4",
+                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$learn$2e$knowly$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$learn$2e$knowly$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$search$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Search$3e$__["Search"], {
+                            className: "w-6 h-6 text-gray-400"
+                        }, void 0, false, {
+                            fileName: "[project]/learn.knowly/app/search/page.tsx",
+                            lineNumber: 99,
+                            columnNumber: 25
+                        }, this)
+                    }, void 0, false, {
+                        fileName: "[project]/learn.knowly/app/search/page.tsx",
+                        lineNumber: 98,
+                        columnNumber: 21
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$learn$2e$knowly$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+                        className: "text-lg font-bold text-gray-900 mb-1",
+                        children: t.noResults
+                    }, void 0, false, {
+                        fileName: "[project]/learn.knowly/app/search/page.tsx",
+                        lineNumber: 101,
+                        columnNumber: 21
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "[project]/learn.knowly/app/search/page.tsx",
+                lineNumber: 97,
+                columnNumber: 17
+            }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$learn$2e$knowly$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "space-y-4",
-                children: results.length > 0 ? results.map((res, idx)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$learn$2e$knowly$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$learn$2e$knowly$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
+                children: results.map((res, idx)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$learn$2e$knowly$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$learn$2e$knowly$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
                         initial: {
                             opacity: 0,
                             y: 10
@@ -218,8 +277,8 @@ function SearchContent() {
                                         children: getIcon(res.type)
                                     }, void 0, false, {
                                         fileName: "[project]/learn.knowly/app/search/page.tsx",
-                                        lineNumber: 104,
-                                        columnNumber: 37
+                                        lineNumber: 115,
+                                        columnNumber: 33
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$learn$2e$knowly$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         children: [
@@ -232,33 +291,33 @@ function SearchContent() {
                                                             children: res.type
                                                         }, void 0, false, {
                                                             fileName: "[project]/learn.knowly/app/search/page.tsx",
-                                                            lineNumber: 109,
-                                                            columnNumber: 88
+                                                            lineNumber: 120,
+                                                            columnNumber: 84
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/learn.knowly/app/search/page.tsx",
-                                                        lineNumber: 109,
-                                                        columnNumber: 45
+                                                        lineNumber: 120,
+                                                        columnNumber: 41
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$learn$2e$knowly$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                         children: "•"
                                                     }, void 0, false, {
                                                         fileName: "[project]/learn.knowly/app/search/page.tsx",
-                                                        lineNumber: 110,
-                                                        columnNumber: 45
+                                                        lineNumber: 121,
+                                                        columnNumber: 41
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$learn$2e$knowly$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                         children: res.breadcrumbs.join(' > ')
                                                     }, void 0, false, {
                                                         fileName: "[project]/learn.knowly/app/search/page.tsx",
-                                                        lineNumber: 111,
-                                                        columnNumber: 45
+                                                        lineNumber: 122,
+                                                        columnNumber: 41
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/learn.knowly/app/search/page.tsx",
-                                                lineNumber: 108,
-                                                columnNumber: 41
+                                                lineNumber: 119,
+                                                columnNumber: 37
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$learn$2e$knowly$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
                                                 className: "text-lg font-bold text-[#101828] group-hover:text-[#D92D20] transition-colors",
@@ -266,72 +325,42 @@ function SearchContent() {
                                                     children: res.title
                                                 }, void 0, false, {
                                                     fileName: "[project]/learn.knowly/app/search/page.tsx",
-                                                    lineNumber: 114,
-                                                    columnNumber: 45
+                                                    lineNumber: 125,
+                                                    columnNumber: 41
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/learn.knowly/app/search/page.tsx",
-                                                lineNumber: 113,
-                                                columnNumber: 41
+                                                lineNumber: 124,
+                                                columnNumber: 37
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/learn.knowly/app/search/page.tsx",
-                                        lineNumber: 107,
-                                        columnNumber: 37
+                                        lineNumber: 118,
+                                        columnNumber: 33
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/learn.knowly/app/search/page.tsx",
-                                lineNumber: 103,
-                                columnNumber: 33
+                                lineNumber: 114,
+                                columnNumber: 29
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$learn$2e$knowly$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$learn$2e$knowly$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$right$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowRight$3e$__["ArrowRight"], {
                                 className: "w-5 h-5 text-gray-300 group-hover:text-[#D92D20] -translate-x-2 group-hover:translate-x-0 opacity-0 group-hover:opacity-100 transition-all"
                             }, void 0, false, {
                                 fileName: "[project]/learn.knowly/app/search/page.tsx",
-                                lineNumber: 118,
-                                columnNumber: 33
+                                lineNumber: 129,
+                                columnNumber: 29
                             }, this)
                         ]
                     }, res.id + idx, true, {
                         fileName: "[project]/learn.knowly/app/search/page.tsx",
-                        lineNumber: 95,
-                        columnNumber: 29
-                    }, this)) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$learn$2e$knowly$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "text-center py-20 bg-white rounded-3xl border border-dashed border-gray-200",
-                    children: [
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$learn$2e$knowly$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "w-16 h-16 bg-gray-50 rounded-full flex items-center justify-center mx-auto mb-4",
-                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$learn$2e$knowly$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$learn$2e$knowly$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$search$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Search$3e$__["Search"], {
-                                className: "w-6 h-6 text-gray-400"
-                            }, void 0, false, {
-                                fileName: "[project]/learn.knowly/app/search/page.tsx",
-                                lineNumber: 124,
-                                columnNumber: 33
-                            }, this)
-                        }, void 0, false, {
-                            fileName: "[project]/learn.knowly/app/search/page.tsx",
-                            lineNumber: 123,
-                            columnNumber: 29
-                        }, this),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$learn$2e$knowly$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                            className: "text-lg font-bold text-gray-900 mb-1",
-                            children: t.noResults
-                        }, void 0, false, {
-                            fileName: "[project]/learn.knowly/app/search/page.tsx",
-                            lineNumber: 126,
-                            columnNumber: 29
-                        }, this)
-                    ]
-                }, void 0, true, {
-                    fileName: "[project]/learn.knowly/app/search/page.tsx",
-                    lineNumber: 122,
-                    columnNumber: 25
-                }, this)
+                        lineNumber: 106,
+                        columnNumber: 25
+                    }, this))
             }, void 0, false, {
                 fileName: "[project]/learn.knowly/app/search/page.tsx",
-                lineNumber: 92,
+                lineNumber: 104,
                 columnNumber: 17
             }, this)
         ]
@@ -341,7 +370,7 @@ function SearchContent() {
         columnNumber: 9
     }, this);
 }
-_s(SearchContent, "CdaqTmTvnQsokUwNpOMyV7vhA98=", false, function() {
+_s(SearchContent, "m4SROeuflfCtH2ZHoU8xsXGnQaw=", false, function() {
     return [
         __TURBOPACK__imported__module__$5b$project$5d2f$learn$2e$knowly$2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useSearchParams"],
         __TURBOPACK__imported__module__$5b$project$5d2f$learn$2e$knowly$2f$hooks$2f$useLangRouter$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useLangRouter"],
@@ -359,27 +388,27 @@ function SearchPage() {
                     className: "w-8 h-8 animate-spin text-red-500"
                 }, void 0, false, {
                     fileName: "[project]/learn.knowly/app/search/page.tsx",
-                    lineNumber: 138,
+                    lineNumber: 141,
                     columnNumber: 92
                 }, void 0)
             }, void 0, false, {
                 fileName: "[project]/learn.knowly/app/search/page.tsx",
-                lineNumber: 138,
+                lineNumber: 141,
                 columnNumber: 33
             }, void 0),
             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$learn$2e$knowly$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(SearchContent, {}, void 0, false, {
                 fileName: "[project]/learn.knowly/app/search/page.tsx",
-                lineNumber: 139,
+                lineNumber: 142,
                 columnNumber: 17
             }, this)
         }, void 0, false, {
             fileName: "[project]/learn.knowly/app/search/page.tsx",
-            lineNumber: 138,
+            lineNumber: 141,
             columnNumber: 13
         }, this)
     }, void 0, false, {
         fileName: "[project]/learn.knowly/app/search/page.tsx",
-        lineNumber: 137,
+        lineNumber: 140,
         columnNumber: 9
     }, this);
 }

@@ -59,6 +59,12 @@
       "namedRegex": "^/_not\\-found(?:/)?$"
     },
     {
+      "page": "/api/teacher-image",
+      "regex": "^/api/teacher\\-image(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/teacher\\-image(?:/)?$"
+    },
+    {
       "page": "/api/translate",
       "regex": "^/api/translate(?:/)?$",
       "routeKeys": {},
