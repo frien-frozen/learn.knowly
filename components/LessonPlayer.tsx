@@ -55,9 +55,10 @@ export default function LessonPlayer({ topic }: { topic: any }) {
               <div className="w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center shrink-0 overflow-hidden">
                 {topic.teacher.profilePic ? (
                   <img
-                    src={`/api/teacher-image?url=${encodeURIComponent(topic.teacher.profilePic)}`}
+                    src={topic.teacher.profilePic}
                     alt={topic.teacher.name}
                     className="w-full h-full rounded-full object-cover"
+                    referrerPolicy="no-referrer"
                     onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
                   />
                 ) : (

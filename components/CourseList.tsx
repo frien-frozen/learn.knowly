@@ -43,25 +43,32 @@ export default function CourseList() {
     }, []);
 
     return (
-        <section id="courses" className="py-12 md:py-24 px-2 md:px-6 bg-[#F9FAFB]">
+        <section id="courses" className="py-6 md:py-12 px-0 md:px-6 bg-[#F9FAFB]">
             <div className="w-full max-w-4xl mx-auto">
 
                 {/* Header */}
-                <div className="text-center mb-12">
-                    <h2 className="text-2xl md:text-4xl font-extrabold text-[#101828] mb-3 font-nunito">
+                <div className="text-center mb-8 md:mb-12">
+                    <h2 className="text-xl md:text-4xl font-extrabold text-[#101828] mb-2 md:mb-3 font-nunito">
                         <T>Most Popular Courses</T>
                     </h2>
-                    <p className="text-lg md:text-xl text-gray-500 font-medium font-nunito">
+                    <p className="text-sm md:text-xl text-gray-500 font-medium font-nunito px-4">
                         <T>Join thousands of students mastering these subjects</T>
                     </p>
                 </div>
 
                 {/* Card Container */}
-                <div className="bg-white rounded-[2rem] md:rounded-[2.5rem] p-4 md:p-8 shadow-sm min-h-[300px]">
+                <div className="bg-white rounded-[1.5rem] md:rounded-[2.5rem] p-3 md:p-8 shadow-sm">
                     {isLoading ? (
-                        <div className="w-full h-full flex flex-col items-center justify-center p-12 text-gray-400">
-                             <Loader2 className="w-8 h-8 animate-spin mb-4" />
-                             <T>Loading curriculum...</T>
+                        <div className="space-y-2 md:space-y-3">
+                            {[1, 2, 3, 4, 5].map(i => (
+                                <div key={i} className="flex items-center justify-between p-3 md:p-4 bg-gray-50 rounded-2xl animate-pulse">
+                                    <div className="flex items-center gap-3 md:gap-4 flex-1 min-w-0">
+                                        <div className="w-9 h-9 md:w-12 md:h-12 bg-gray-200 rounded-xl shrink-0" />
+                                        <div className="h-4 md:h-5 bg-gray-200 rounded w-2/3 max-w-[200px]" />
+                                    </div>
+                                    <div className="w-16 md:w-20 h-5 md:h-6 bg-gray-200 rounded-lg shrink-0 ml-3" />
+                                </div>
+                            ))}
                         </div>
                     ) : courses.length === 0 ? (
                         <div className="text-center py-12">
