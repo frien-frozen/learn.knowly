@@ -49,14 +49,14 @@ export default function LessonPlayer({ topic }: { topic: any }) {
             ></iframe>
           </div>
 
-          {/* Teacher Profile Card */}
-          {topic?.teacher && (
+          {/* Publisher Card — shows whoever uploaded this lesson's video */}
+          {topic?.publishedBy && (
             <div className="flex items-center gap-5 mt-8 transition-all">
               <div className="w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center shrink-0 overflow-hidden">
-                {topic.teacher.profilePic ? (
+                {topic.publishedBy.profilePic ? (
                   <img
-                    src={`/api/teacher-image?url=${encodeURIComponent(topic.teacher.profilePic)}`}
-                    alt={topic.teacher.name}
+                    src={`/api/teacher-image?url=${encodeURIComponent(topic.publishedBy.profilePic)}`}
+                    alt={topic.publishedBy.name}
                     className="w-full h-full rounded-full object-cover"
                     onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
                   />
@@ -67,11 +67,11 @@ export default function LessonPlayer({ topic }: { topic: any }) {
               <div>
                 <p className="text-xs font-extrabold text-gray-400 uppercase tracking-widest mb-1">Teacher:</p>
                 <div className="flex items-center gap-1.5">
-                    <h4 className="text-xl font-black text-[#101828]">{topic.teacher.name}</h4>
+                    <h4 className="text-xl font-black text-[#101828]">{topic.publishedBy.name}</h4>
                     <BadgeCheck className="w-5 h-5 text-white fill-blue-500 ml-1" />
                 </div>
                 <p className="text-sm text-gray-500 font-medium mt-0.5 line-clamp-2">
-                  {topic.teacher.bio || "Knowly Verified Educator"}
+                  {topic.publishedBy.bio || "Knowly Verified Educator"}
                 </p>
               </div>
             </div>

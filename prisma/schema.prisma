@@ -11,10 +11,13 @@ model Teacher {
   id          String   @id @default(cuid())
   name        String
   email       String   @unique
+  bio         String?  @db.Text
+  profilePic  String?
   subjectId   String?  // The specific subject this teacher manages
   subject     Subject? @relation(fields: [subjectId], references: [id])
   units       Unit[]
   topics      Topic[]
+  publishedTopics Topic[] @relation("PublishedTopics")
 }
 
 model Curriculum {
@@ -44,12 +47,15 @@ model Unit {
 }
 
 model Topic {
-  id      String  @id @default(cuid())
-  title   String
-  ytLink  String?
-  order   Int     @default(0)
-  unitId  String
-  unit    Unit    @relation(fields: [unitId], references: [id], onDelete: Cascade)
-  teacherId String
-  teacher   Teacher @relation(fields: [teacherId], references: [id])
+  id            String  @id @default(cuid())
+  title         String
+  ytLink        String?
+  order         Int     @default(0)
+  unitId        String
+  unit          Unit    @relation(fields: [unitId], references: [id], onDelete: Cascade)
+  teacherId     String
+  teacher       Teacher @relation(fields: [teacherId], references: [id])
+  publishedById String?
+  publishedBy   Teacher? @relation("PublishedTopics", fields: [publishedById], references: [id])
+  publishedAt   DateTime?
 }

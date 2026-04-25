@@ -66,7 +66,9 @@ export async function getSubjectBySlug(subjectSlug: string) {
             include: {
               topics: {
                 include: {
-                  teacher: true // Fetch the author of the lesson
+                  publishedBy: {
+                    select: { id: true, name: true, bio: true, profilePic: true }
+                  }
                 },
                 orderBy: { order: 'asc' }
               }
