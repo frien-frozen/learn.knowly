@@ -31,11 +31,15 @@ export default function Footer() {
                             <T>Your AI-powered learning companion for Cambridge, Edexcel, and more.</T>
                         </p>
                         <div className="flex gap-4">
-                            {[Instagram, Send, Youtube].map((Icon, i) => (
-                                <a key={i} href="#" className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-[#D92D20] transition-colors">
-                                    <Icon className="w-5 h-5" />
-                                </a>
-                            ))}
+                            <a href="https://instagram.com/knowly.uz" aria-label="Instagram" className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-[#D92D20] transition-colors">
+                                <Instagram className="w-5 h-5" />
+                            </a>
+                            <a href="https://t.me/knowlyuz" aria-label="Telegram" className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-[#D92D20] transition-colors">
+                                <Send className="w-5 h-5" />
+                            </a>
+                            <a href="https://youtube.com/@knowlyuz" aria-label="YouTube" className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-[#D92D20] transition-colors">
+                                <Youtube className="w-5 h-5" />
+                            </a>
                         </div>
                     </div>
 
@@ -43,10 +47,10 @@ export default function Footer() {
                     <div>
                         <h4 className="font-bold text-lg mb-6"><T>Platform</T></h4>
                         <ul className="space-y-4 text-gray-400">
-                            <li><a href="#" className="hover:text-[#FDB022] transition-colors"><T>Curriculums</T></a></li>
-                            <li><a href="#" className="hover:text-[#FDB022] transition-colors"><T>Teachers</T></a></li>
-                            <li><a href="#" className="hover:text-[#FDB022] transition-colors"><T>Our Mission</T></a></li>
-                            <li><a href="#" className="hover:text-[#FDB022] transition-colors"><T>Success Stories</T></a></li>
+                            <li><a href="https://www.knowly.uz/#curriculums" className="hover:text-[#FDB022] transition-colors"><T>Curriculums</T></a></li>
+                            <li><a href="https://www.knowly.uz/#teachers" className="hover:text-[#FDB022] transition-colors"><T>Teachers</T></a></li>
+                            <li><a href="https://www.knowly.uz/#mission" className="hover:text-[#FDB022] transition-colors"><T>Our Mission</T></a></li>
+                            <li><a href="https://teacher.knowly.uz/apply" className="hover:text-[#FDB022] transition-colors"><T>Become a Teacher</T></a></li>
                         </ul>
                     </div>
 
@@ -94,10 +98,10 @@ export default function Footer() {
                 </div>
 
                 <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-500">
-                    <p><T>© 2025 KNOWLY. All rights reserved.</T></p>
+                    <p><T>© 2026 KNOWLY. All rights reserved.</T></p>
                     <div className="flex gap-6">
-                        <a href="#" className="hover:text-white"><T>Privacy Policy</T></a>
-                        <a href="#" className="hover:text-white"><T>Terms of Service</T></a>
+                        <a href="/privacy" className="hover:text-white"><T>Privacy Policy</T></a>
+                        <a href="/terms" className="hover:text-white"><T>Terms of Service</T></a>
                     </div>
                 </div>
             </div>
