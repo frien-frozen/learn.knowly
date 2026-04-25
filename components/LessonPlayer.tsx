@@ -53,11 +53,16 @@ export default function LessonPlayer({ topic }: { topic: any }) {
           {topic?.teacher && (
             <div className="flex items-center gap-5 mt-8 transition-all">
               <div className="w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center shrink-0 overflow-hidden">
-                <img 
-                  src={topic.teacher.profileImage ? `/api/teacher-image?url=${encodeURIComponent(topic.teacher.profileImage)}` : '/default-avatar.png'} 
-                  alt={topic.teacher.name} 
-                  className="w-full h-full rounded-full object-cover" 
-                />
+                {topic.teacher.profilePic ? (
+                  <img
+                    src={`/api/teacher-image?url=${encodeURIComponent(topic.teacher.profilePic)}`}
+                    alt={topic.teacher.name}
+                    className="w-full h-full rounded-full object-cover"
+                    onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
+                  />
+                ) : (
+                  <User className="w-6 h-6 text-gray-400" />
+                )}
               </div>
               <div>
                 <p className="text-xs font-extrabold text-gray-400 uppercase tracking-widest mb-1">Teacher:</p>
