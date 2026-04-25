@@ -7,9 +7,8 @@ import ScrollToTop from "@/components/ScrollToTop";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
-// Optimize Fonts
 const nunito = Nunito({
-  subsets: ["latin", "cyrillic"], // Added Cyrillic for Uzbek
+  subsets: ["latin", "cyrillic"],
   variable: "--font-nunito",
   weight: ["400", "500", "700", "800"],
   display: "swap",
@@ -21,18 +20,57 @@ const jakarta = Plus_Jakarta_Sans({
   display: "swap",
 });
 
-// Professional SEO Metadata
 export const metadata: Metadata = {
-  title: "KNOWLY | Quality Education.",
-  description: "Free Cambridge & Pearson education for Uzbekistan. Master global standards with simple Uzbek explanations. 100% Free.",
-  keywords: ["education", "uzbekistan", "cambridge", "pearson", "free learning", "video lessons", "igcse", "a-levels"],
+  title: {
+    default: "Knowly Learn | Cambridge & Pearson Video Darslar — Bepul",
+    template: "%s | Knowly Learn",
+  },
+  description:
+    "Cambridge IGCSE, A-Levels va Pearson Edexcel bo'yicha bepul video darslar. O'zbekiston o'quvchilari uchun ona tilida murakkab fanlarni o'rganing.",
+  keywords: [
+    "cambridge igcse video darslar", "a-levels o'zbek tilida", "pearson edexcel bepul",
+    "biologiya video dars", "fizika video dars", "kimyo video dars", "matematika video dars",
+    "igcse biology uzbek", "igcse physics uzbek", "igcse chemistry uzbek",
+    "bepul online ta'lim o'zbekiston", "knowly learn", "learn.knowly.uz",
+    "cambridge o'zbekiston", "maktab darslari video"
+  ],
+  metadataBase: new URL("https://learn.knowly.uz"),
+  alternates: {
+    canonical: "https://learn.knowly.uz",
+  },
   openGraph: {
-    title: "KNOWLY | Free Quality Education",
-    description: "Master global standards in your mother tongue.",
-    url: "https://knowly.uz",
-    siteName: "KNOWLY",
+    title: "Knowly Learn | Bepul Cambridge & Pearson Video Darslar",
+    description:
+      "IGCSE, A-Levels, Edexcel — bepul video darslar, o'zbek tilida. Hamma fan bo'yicha.",
+    url: "https://learn.knowly.uz",
+    siteName: "Knowly Learn",
     locale: "uz_UZ",
     type: "website",
+    images: [
+      {
+        url: "/logos/knowly-full.png",
+        width: 1200,
+        height: 630,
+        alt: "Knowly Learn — Bepul Video Darslar",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Knowly Learn | Bepul Cambridge Video Darslar",
+    description: "IGCSE, A-Levels, Edexcel — bepul, o'zbek tilida.",
+    images: ["/logos/knowly-full.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
 };
 
@@ -42,7 +80,6 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    // FIX: suppressHydrationWarning prevents errors from browser extensions & dynamic attributes
     <html lang="uz" className="scroll-smooth" suppressHydrationWarning>
       <body
         className={`${nunito.variable} ${jakarta.variable} antialiased bg-[#F2F4F7] text-[#101828] font-nunito`}
@@ -59,4 +96,3 @@ export default function RootLayout({
     </html>
   );
 }
-
